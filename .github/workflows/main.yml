@@ -16,6 +16,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SOURCE: "./index.html"
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.REMOTE_USERNAME }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
           PORT: 22
           TARGET: ${{ secrets.TARGET_DIR }}
