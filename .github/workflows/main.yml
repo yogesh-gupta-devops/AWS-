@@ -10,13 +10,12 @@ jobs:
     steps:
       - name: Checkout the files
         uses: actions/checkout@v2
-      - name: Deploy to Server 1
+      - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
-        
-        env:
-          REMOTE_KEY:  ${{ secrets.SSH_PRIVATE_KEY }}
+    env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: "./index.html"
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
-          REMOTE_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          REMOTE_USER: ${{ secrets.REMOTE_USERNAME }}
           PORT: 22
           TARGET: ${{ secrets.TARGET_DIR }}
