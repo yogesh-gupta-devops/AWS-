@@ -10,13 +10,13 @@ jobs:
     steps:
       - name: Checkout the files
         uses: actions/checkout@v2
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v2.1.5
       - name: Prepare SSH to work with the remote server
         run: |
           cd ~ && mkdir .ssh &&
           touch ~/.ssh/known_hosts &&
           echo "${{ secrets.SSH_HOSTKEY }}" > ~/.ssh/known_hosts
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2.1.5
     env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SOURCE: "./index.html"
