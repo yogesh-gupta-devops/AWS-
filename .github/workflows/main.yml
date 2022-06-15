@@ -14,7 +14,7 @@ jobs:
         run: |
           cd ~ && mkdir .ssh &&
           touch ~/.ssh/known_hosts &&
-          echo "${{ secrets.SSH_HOSTKEY }}" > ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/known_hosts
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.1.5
     env:
