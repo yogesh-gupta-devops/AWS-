@@ -19,8 +19,8 @@ jobs:
         uses: easingthemes/ssh-deploy@main
     env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SOURCE: "./index.html"
+          SOURCE: "./Raj2.com"
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           PORT: 22
-          TARGET: "/home/ubuntu/Raj2.com/"
+          TARGET: "/home/ubuntu/"
